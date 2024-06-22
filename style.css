@@ -58,7 +58,7 @@ nav{
 }
 
 .songItem{
-    height: 38px;
+    height: 40px;
     width: 50vw;
     display: flex;
     background-color: white;
@@ -71,7 +71,8 @@ nav{
 }
 
 .songItem img{
-    width: 44px;
+    width: 38px;
+    box-shadow: 2px 2px 5px;
     margin: 0 23px;
     border-radius: 34px;
 }
@@ -118,4 +119,10 @@ nav{
 .songInfo{
     margin-top: 15px;
     margin-left: 25px;
+    
+}
+
+#gif{
+    opacity: 0 ;
+    transition: opacity 0.4s ease-in;
 }

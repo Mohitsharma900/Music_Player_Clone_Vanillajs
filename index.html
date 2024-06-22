@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Spotify</title>
+    <link rel="shortcut icon" href="Assets/logo.png" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
 </head>
-<script src="script.js"></script>
 <body>
     <nav>
         <ul class="nav_ul">
@@ -22,54 +22,54 @@
                 <h1>Best of KR$NA - No Copyright Sounds</h1>
                 <div class="songItemContainer">
                     <div class="songItem">
-                        <img alt="1">
+                        <img class="song_img" alt="1">
                         <span class="songName">Let me Love You</span>
-                        <span class="songlistplay"><span class="timestamp">05:34 <i id="0" class="far songItemPlay fa-play-circle"></i> </span></span>
+                        <span class="songlistplay"><span class="timestamp">05:34 <i itemid="1" id="10_Pe_10" class="far songItemPlay fa-play-circle 1"></i> </span></span>
                     </div>
                     <div class="songItem">
-                        <img alt="1">
+                        <img class="song_img" alt="1">
                         <span class="songName">Let me Love You</span>
-                        <span class="songlistplay"><span class="timestamp">05:34 <i id="1" class="far songItemPlay fa-play-circle"></i> </span></span>
+                        <span class="songlistplay"><span class="timestamp">05:34 <i itemid="2" id="Hola_Amigo" class="far songItemPlay fa-play-circle 2"></i> </span></span>
                     </div>
                     <div class="songItem">
-                        <img alt="1">
+                        <img class="song_img" alt="1">
                         <span class="songName">Let me Love You</span>
-                        <span class="songlistplay"><span class="timestamp">05:34 <i id="2" class="far songItemPlay fa-play-circle"></i> </span></span>
+                        <span class="songlistplay"><span class="timestamp">05:34 <i itemid="3" id="I_Guess" class="far songItemPlay fa-play-circle 3"></i> </span></span>
                     </div>
                     <div class="songItem">
-                        <img alt="1">
+                        <img class="song_img" alt="1">
                         <span class="songName">Let me Love You</span>
-                        <span class="songlistplay"><span class="timestamp">05:34 <i id="3" class="far songItemPlay fa-play-circle"></i> </span></span>
+                        <span class="songlistplay"><span class="timestamp">05:34 <i itemid="4" id="Paisa_on_my_mind" class="far songItemPlay fa-play-circle 4"></i> </span></span>
                     </div>
                     <div class="songItem">
-                        <img alt="1">
+                        <img class="song_img" alt="1">
                         <span class="songName">Let me Love You</span>
-                        <span class="songlistplay"><span class="timestamp">05:34 <i id="4" class="far songItemPlay fa-play-circle"></i> </span></span>
+                        <span class="songlistplay"><span class="timestamp">05:34 <i itemid="5" id="Woh_Raat" class="far songItemPlay fa-play-circle 5"></i> </span></span>
                     </div>
                     <div class="songItem">
-                        <img alt="1">
+                        <img class="song_img" alt="1">
                         <span class="songName">Let me Love You</span>
-                        <span class="songlistplay"><span class="timestamp">05:34 <i id="5" class="far songItemPlay fa-play-circle"></i> </span></span>
+                        <span class="songlistplay"><span class="timestamp">05:34 <i itemid="6" id="Prarthna" class="far songItemPlay fa-play-circle 6"></i> </span></span>
                     </div>
                     <div class="songItem">
-                        <img alt="1">
+                        <img class="song_img" alt="1">
                         <span class="songName">Let me Love You</span>
-                        <span class="songlistplay"><span class="timestamp">05:34 <i id="6" class="far songItemPlay fa-play-circle"></i> </span></span>
+                        <span class="songlistplay"><span class="timestamp">05:34 <i itemid="7" id="Joota_Japani" class="far songItemPlay fa-play-circle 7"></i> </span></span>
                     </div>
                     <div class="songItem">
-                        <img alt="1">
+                        <img class="song_img" alt="1">
                         <span class="songName">Let me Love You</span>
-                        <span class="songlistplay"><span class="timestamp">05:34 <i id="7" class="far songItemPlay fa-play-circle"></i> </span></span>
+                        <span class="songlistplay"><span class="timestamp">05:34 <i itemid="8" id="Machayenge_4" class="far songItemPlay fa-play-circle 8"></i> </span></span>
                     </div>
                     <div class="songItem">
-                        <img alt="1">
+                        <img class="song_img" alt="1">
                         <span class="songName">Let me Love You</span>
-                        <span class="songlistplay"><span class="timestamp">05:34 <i id="8" class="far songItemPlay fa-play-circle"></i> </span></span>
+                        <span class="songlistplay"><span class="timestamp">05:34 <i itemid="9" id="No_Cap" class="far songItemPlay fa-play-circle 9"></i> </span></span>
                     </div>
                     <div class="songItem">
-                        <img alt="1">
+                        <img class="song_img" alt="1">
                         <span class="songName">Let me Love You</span>
-                        <span class="songlistplay"><span class="timestamp">05:34 <i id="9" class="far songItemPlay fa-play-circle"></i> </span></span>
+                        <span class="songlistplay"><span class="timestamp">05:34 <i itemid="10" id="Zero_After_Zero" class="far songItemPlay fa-play-circle 10"></i> </span></span>
                     </div>
                 </div>
             </div>
@@ -78,19 +78,20 @@
     </main>
     <footer>
         <div class="bottom">
-            <input type="range">
+            <input type="range" id="myProgressBar" value="0">
             <div class="icons">
-                <img src="Assets/backword.svg" alt="">
-                <img src="Assets/play-solid.svg" alt="">
-                <img src="Assets/forward-step-solid.svg" alt="">
+                <img src="Assets/backword.svg" alt="" class="previous">
+                <img id="masterPlay" src="Assets/play-solid.svg" alt="">
+                <img src="Assets/forward-step-solid.svg" alt="" class="next">
             </div>
             <div class="songInfo">
-                <img src="playing.gif" width="42px" alt="" id="gif"> <span id="masterSongName">Warriyo - Mortals [NCS Release]</span>
+                <img id="gif" src="Assets/playing.gif" width="42px" alt="" id="gif"> <span id="masterSongName"></span>
             </div>
         </div>
         
     </footer>
     
 </body>
+<script src="script.js"></script>
 <script src="https://kit.fontawesome.com/26504e4a1f.js" crossorigin="anonymous"></script>
 </html>
