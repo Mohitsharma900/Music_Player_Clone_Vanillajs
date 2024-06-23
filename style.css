@@ -40,6 +40,10 @@ nav{
     height: 40px;
 }
 
+body{
+    background-color: rgb(51, 48, 48);
+}
+
 .container{
     color: white;
     width: 90%;
@@ -48,7 +52,7 @@ nav{
     min-height: 82vh;
     margin-top: 10px;
     margin-bottom: 10px;
-    background-color: antiquewhite;
+    background-color: rgb(240, 218, 190);
     border-radius: 5px;
 }
 
@@ -61,9 +65,9 @@ nav{
     height: 40px;
     width: 50vw;
     display: flex;
-    background-color: white;
-    color: black;
-
+    background-color: #212121;
+    color: rgb(255, 255, 255);
+    text-shadow: 3px 3px 10px rgb(114, 114, 114);
     border-radius: 34px;
     margin:12px;
     align-items: center;
@@ -72,9 +76,10 @@ nav{
 
 .songItem img{
     width: 38px;
-    box-shadow: 2px 2px 5px;
+    box-shadow: 2px 2px 5px black;
     margin: 0 23px;
     border-radius: 34px;
+    
 }
 
 .timestamp{
