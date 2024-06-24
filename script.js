@@ -1,8 +1,8 @@
 console.log("Welcome to Spotify.");
 
 //initialize variables
-let songIndex = 0;
-let audioElement = new Audio('Assets/Songs/Zero_After_ Zero.mp3');
+let songIndex = 1;
+let audioElement = new Audio('Assets/Songs/Zero_After_Zero.mp3');
 let masterPlay = document.getElementById('masterPlay')
 let myProgressBar = document.getElementById('myProgressBar')
 let gif = document.getElementById('gif')
@@ -70,7 +70,7 @@ Array.from(document.getElementsByClassName('songItemPlay')).forEach((Element ) =
         let pathAccess = e.target;
         console.log(pathAccess.getAttribute('itemid'));
         songIndex=  parseInt(pathAccess.getAttribute('itemid'))
-        console.log(songIndex);
+        // console.log(songIndex);
         makeallPlays()
         e.target.classList.remove('fa-play-circle');
         e.target.classList.add('fa-pause-circle');
@@ -96,15 +96,13 @@ Array.from(document.getElementsByClassName('songItemPlay')).forEach((Element ) =
 
 document.querySelector('.next').addEventListener('click',()=>{
    if (songIndex >= 10) {
-        songIndex = 0
+        songIndex = 1
     }else{
         songIndex += 1
     }
     audioElement.currentTime= 0;
-    
     sngidx = document.getElementsByClassName(`${songIndex}`);
-    console.log(sngidx[0].id);
-    audioElement.src = `Assets/songs/${sngidx[0].id}.mp3`
+    audioElement.src = `Assets/Songs/${sngidx[0].id}.mp3`
     if (audioElement.paused || audioElement.currentTime <= 0) {
         masterPlay.setAttribute('src', 'Assets/pause-solid.svg')
         gif.style.opacity = 1
@@ -115,4 +113,29 @@ document.querySelector('.next').addEventListener('click',()=>{
         gif.style.opacity = 0
     } 
 })
+
+document.querySelector('.previous').addEventListener('click',()=>{
+    if (songIndex >= 10) {
+         songIndex = 1
+         console.log(songIndex);
+     }else{
+         songIndex -= 1
+         console.log(songIndex);
+     }
+     audioElement.currentTime= 0;
+     
+     sngidx = document.getElementsByClassName(`${songIndex}`);
+     console.log(sngidx[0].id);
+     audioElement.src = `Assets/songs/${sngidx[0].id}.mp3`
+     console.log(audioElement.src);
+     if (audioElement.paused || audioElement.currentTime <= 0) {
+         masterPlay.setAttribute('src', 'Assets/pause-solid.svg')
+         gif.style.opacity = 1
+         audioElement.play()
+     }else{
+         audioElement.pause()
+         masterPlay.setAttribute('src', 'Assets/play-solid.svg')
+         gif.style.opacity = 0
+     } 
+ })
 
