@@ -9,6 +9,7 @@ let gif = document.getElementById('gif')
 let title = document.getElementsByClassName('songName')
 let songItems = Array.from(document.getElementsByClassName('songItem'))
 let masterSongName = document.getElementById('masterSongName');
+let timeStamp = Array.from(document.querySelectorAll('.timestamp'))
 
 let songs = [
     {songName:"10 Pe 10", filepath: "Assets/Songs/10_Pe_10.mp3", coverPath : 'Assets/covers/1.jpg'},
@@ -89,7 +90,7 @@ Array.from(document.getElementsByClassName('songItemPlay')).forEach((Element ) =
 
         let name = e.target.id
         name = name.replaceAll("_" , " ")
-        console.log(name);
+        // console.log(name);
         masterSongName.innerText = name 
     })
 });
@@ -138,4 +139,83 @@ document.querySelector('.previous').addEventListener('click',()=>{
          gif.style.opacity = 0
      } 
  })
+
+
+//  audioElement.addEventListener('loadedmetadata', function() {
+//     var durationInMinutes = convertSecondsToMinutes(audioElement.duration);
+//     console.log('Duration:', durationInMinutes);
+// });
+
+
+
+
+//  timeStamp.forEach((e)=>{
+//     console.log(e.children[0].id);
+//     audioElement.src = `Assets/Songs/${e.children[0].id}.mp3`
+//     console.log(audioElement);
+//     audioElement.addEventListener('loadedmetadata', ()=>{
+//     let durationInMinutes = (audioElement.duration)/60;
+//     durationInMinutes= durationInMinutes.toFixed(2).toString().replace('.', ':')
+//     console.log(durationInMinutes);
+// })
+//  })
+
+// timeStamp.forEach((e) => {
+//     var audioElement = new Audio();
+//     var audioUrl = `Assets/Songs/${e.children[0].id}.mp3`;
+//     audioElement.src = audioUrl;
+
+//     console.log('Loading audio:', audioUrl);
+
+//     audioElement.addEventListener('loadedmetadata', () => {
+//         let durationInSeconds = audioElement.duration;
+//         let durationInMinutes = (durationInSeconds / 60).toFixed(2).toString().replace('.', ':');
+//         console.log(`Duration of ${e.children[0].id}.mp3:`, durationInMinutes);
+//     });
+
+//     audioElement.addEventListener('error', (err) => {
+//         console.error('Error loading audio:', err);
+//     });
+// });
+
+timeStamp.forEach((timestamp) => {
+    Array.from(timestamp.children).forEach((child) => {
+        let audioElement = new Audio();
+        let audioUrl = `Assets/Songs/${child.id}.mp3`;
+        audioElement.src = audioUrl;
+
+        console.log('Loading audio:', audioUrl);
+
+        audioElement.addEventListener('loadedmetadata', () => {
+            let durationInSeconds = audioElement.duration;
+            let durationInMinutes = (durationInSeconds / 60).toFixed(2).toString().replace('.', ':');
+            console.log(`Duration of ${child.id}.mp3:`, durationInMinutes);
+            
+            // Update the innerHTML of the corresponding timestamp child element
+            let durationSpan = document.createElement('span')
+            durationSpan.innerText = durationInMinutes;
+            durationSpan.style.margin = '0 23px'
+            // timestamp.appendChild(durationSpan);
+            if (timestamp.firstChild) {
+                timestamp.insertBefore(durationSpan, timestamp.firstChild);
+            } else {
+                timestamp.appendChild(durationSpan);
+            }
+        });
+
+        audioElement.addEventListener('error', (err) => {
+            console.error('Error loading audio:', err);
+        });
+    });
+});
+
+
+
+
+ 
+//  var durationInMinutes = (audioElement.duration)/60;
+//     durationInMinutes= durationInMinutes.toFixed(2)
+//     durationInMinutes = durationInMinutes.toString()
+//     durationInMinutes = durationInMinutes.replace('.' , ":" )
+//     console.log(durationInMinutes);
 
